@@ -13,12 +13,42 @@ import java.util.Scanner;
 public class PartidoFutbol {
 		
 		private String EquipoLocal;
-		private String EquipoVisita;
-		private int GolesLocal;
-		private int GolesVisita;
+		private String equipoVisitante;
+		private int golesLocal;
+		private int golesVisitante;
+		private int golesTotal;
 		
 		
 	
+		public String getEquipoVisitante() {
+			return equipoVisitante;
+		}
+
+
+		public void setEquipoVisitante(String equipoVisitante) {
+			this.equipoVisitante = equipoVisitante;
+		}
+
+
+		public int getGolesVisitante() {
+			return golesVisitante;
+		}
+
+
+		public void setGolesVisitante(int golesVisitante) {
+			this.golesVisitante = golesVisitante;
+		}
+
+
+		public int getGolesTotal() {
+			return golesTotal;
+		}
+
+
+		public void setGolesTotal() {
+		golesTotal = getGolesLocal() + getGolesVisitante();
+		}
+
 		public void Partido(){
 			
 		}
@@ -31,27 +61,26 @@ public class PartidoFutbol {
 			EquipoLocal = equipoLocal;
 		}
 		public String getEquipoVisita() {
-			return EquipoVisita;
+			return equipoVisitante;
 		}
 		public void setEquipoVisita(String equipoVisita) {
-			EquipoVisita = equipoVisita;
+			equipoVisitante = equipoVisita;
 		}
 		public int getGolesLocal() {
-			return GolesLocal;
+			return golesLocal;
 		}
-		public void setGolesLocal(int golesLocal) {
-			GolesLocal = golesLocal;
+		public void setGolesLocal(int GolesLocal) {
+			golesLocal = GolesLocal;
 		}
 		public int getGolesVisita() {
-			return GolesVisita;
+			return golesVisitante;
 		}
 		public void setGolesVisita(int partes) {
-			GolesVisita = partes;
+			golesVisitante = partes;
 		}
 		
 		public void mostarInfo(){
-			System.out.println("El equipo local es " + getEquipoLocal() + " y ha marcado " + getGolesLocal()
-			+ " y " +  "El equipo visita es " + getEquipoVisita() + " y ha marcado " + getGolesVisita());
+			System.out.println(getEquipoLocal() + " " + getGolesLocal() + " " + getEquipoVisitante() + " " + getGolesVisita());
 			
 		}
 
@@ -62,13 +91,8 @@ public class PartidoFutbol {
 			
 		}
 		
-		
-
-		
-	 
-		
-			
 		}
+
 
 		
 	

@@ -27,6 +27,8 @@ public class Main {
 		final int SALIR = 4;
 		
 		do{
+			GolesComparator gc = new GolesComparator();
+			partidos.sort(gc);
 			System.out.println("---Menu---");
 			System.out.println(LISTAR + "- Listar partidos de futbol.");
 			System.out.println(INSERTAR + "- Agregar resultados de un partido de futbol.");
@@ -158,7 +160,6 @@ public class Main {
 				lista.add(p);
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -193,7 +194,6 @@ public class Main {
 			}
 			fileWriter.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
