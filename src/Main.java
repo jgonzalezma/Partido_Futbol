@@ -166,11 +166,11 @@ public class Main {
 		return lista;
 	}
 	
-	private static void eliminarPartido(String nombrefichero, ArrayList<PartidoFutbol> partidos) {
+	private static void eliminarPartido(String nombreFichero, ArrayList<PartidoFutbol> partidos) {
 		Iterator<PartidoFutbol> i = partidos.iterator();
 		while(i.hasNext()){
 			PartidoFutbol p = i.next();
-			if(p.getEquipoLocal().equals(nombrefichero)){
+			if(p.getEquipoLocal().equals(nombreFichero)){
 				i.remove();
 				System.out.println(p.getEquipoLocal() + " eliminado");
 			}
