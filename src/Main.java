@@ -27,8 +27,6 @@ public class Main {
 		final int SALIR = 4;
 		
 		do{
-			GolesComparator gc = new GolesComparator();
-			partidos.sort(gc);
 			System.out.println("---Menu---");
 			System.out.println(LISTAR + "- Listar partidos de futbol.");
 			System.out.println(INSERTAR + "- Agregar resultados de un partido de futbol.");
@@ -70,6 +68,8 @@ public class Main {
 				break;
 				
 			case LISTAR:
+				GolesComparator gc = new GolesComparator();
+				partidos.sort(gc);
 				if (partidos.isEmpty()) {
 					System.out.println("La lista esta vacía");
 				} else {
@@ -170,7 +170,7 @@ public class Main {
 		Iterator<PartidoFutbol> i = partidos.iterator();
 		while(i.hasNext()){
 			PartidoFutbol p = i.next();
-			if(p.getEquipoLocal().equals(nombreFichero)){
+			if(p.getEquipoLocal().equals(nombreFichero) || (p.getEquipoVisita().equals(nombreFichero))){
 				i.remove();
 				System.out.println(p.getEquipoLocal() + " eliminado");
 			}
@@ -182,7 +182,7 @@ public class Main {
 		FileWriter fileWriter = null;
 
 		try {
-			fileWriter = new FileWriter(nombreFichero, true);
+			fileWriter = new FileWriter(nombreFichero);
 
 			PrintWriter printWriter = new PrintWriter(fileWriter);
 
